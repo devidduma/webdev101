@@ -1,0 +1,21 @@
+<html>
+<head>
+	<script type="text/javascript">
+	var array = new Array("Devid", "Duma", "17", 17);
+	var dudes = new Array ("me", "you", "him");
+	
+	dudes=dudes.concat(array);
+	var string1= dudes.join(" , ");
+	</script>
+</head>
+<body>
+	<script type="text/javascript">
+	document.write(dudes.length, " ", string1);
+	dudes.pop();
+	document.write("<br />", dudes.length);
+	
+	dudes.push("love", "shit", array, dudes);
+	document.write("<br />", dudes.length, dudes[9],  " || ", dudes[9][4]);	//so this is the difference between push and concat
+	</script>
+</body>
+</html>

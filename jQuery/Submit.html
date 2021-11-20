@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="utf-8">
+	<title>jQuery Submit</title>
+	<style>
+		
+	</style>
+</head>
+<body>
+	<form id="signup_form" action="#" method="GET">
+		Email:<input type="email" id="user_email" />
+		<input type="submit" value="Sign Up" />
+	</form>
+	
+	<div id="signup_feedback"></div>
+	
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript">
+		$('#signup_form').submit(function(){
+			var user_email= $('#user_email').val();
+			$('#signup_feedback').html('Thanks, '+user_email+' has been signed up.');
+		});
+	</script>
+</body>
+</html>

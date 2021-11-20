@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>jQuery Minimum Text Field Length</title>
+	<style>
+		
+	</style>
+</head>
+<body>
+	<input type="text" id="name" /><input type="button" id="check" value="Check" />
+	<span id="feedback"></span>
+	
+	
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			names= ['Alex','Billy','Dale'];
+			$('#check').click(function(){
+				name= $('#name').val();
+				if(jQuery.inArray(name,names) != -1) $('#feedback').html(name+' is in the array');
+				else $('#feedback').html(name+' is not in the array');
+			});
+		});
+	</script>
+</body>
+</html>

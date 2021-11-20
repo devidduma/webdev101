@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>jQuery Attribute Selector</title>
+</head>
+<body>
+	Name: <input type="text" /><br>
+	Email: <input type="email" />
+	
+	<!--The same effect (or even better) can be reached by using:
+		<input type="email" placeholder="Enter an email address..." />
+	-->
+	
+	<div id="area"></div>
+	
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			var email_default= 'Enter an email address';
+			
+			//DO NOT USE attr('value',...)
+			
+			$('input[type="email"]').val(email_default)
+			.blur(function() {
+				if(!$(this).val())
+					$('input[type="email"]').val(email_default);
+				//document.getElementById("area").innerHTML+= $(this).attr('value')+"BLUR<br>";
+			})
+			.focus(function() {		//We can select any attribute from any tag we want!
+				if($(this).val()==email_default)
+					$(this).val('');
+				//document.getElementById("area").innerHTML+="FOCUS<br>";
+			});
+		});
+	</script>
+</body>
+</html>

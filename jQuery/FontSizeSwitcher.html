@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>jQuery Font Size Switcher</title>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+	<a href="#" id="Smaller">Smaller</a>
+	<a href="#" id="Bigger">Bigger</a>
+	<p>Hello, i am a paragraph!</p>
+	<p>Hey, i am a paragraph too!</p>
+	<p>Me too!</p>
+	<!--Dnote// You can get the same effect by just using onclick event + javascript + css.
+	Example: document.getElementById('id1').style.color="blue";
+	-->
+	
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript">
+			function change_size(element,size) {
+				if(size=='bigger')
+					element.css('font-size','+=2');
+				else if(size=='smaller')
+					element.css('font-size','-=2');
+				//remember, you could unnecessarily use: parseInt(element.css('font-size'))
+			}
+			
+			$('#Smaller').click(function() {
+				change_size($('p'),'smaller');
+			});
+			$('#Bigger').click(function() {
+				change_size($('p'),'bigger');
+			});
+	</script>
+</body>
+</html>

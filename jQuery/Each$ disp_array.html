@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>jQuery Display Array with $.Each</title>
+	<style>
+		
+	</style>
+</head>
+<body>
+	<input type="text" id="name" /><input type="button" id="insert" value="Insert" /><br />
+	<span id="names"></span>
+	
+	
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			function displayArray(){
+				$('#names').text('');	//it just clears before showing, so we don't get duplicate data.
+				$.each(names,function(index,value){
+					$('#names').append(value+'<br />');
+				});
+			}
+			names= ['Alex','Billy','Dale'];
+			displayArray();
+			
+			$('#insert').click(function(){
+				name= $('#name').val();
+				names.push(name);
+				displayArray();
+			});
+		});
+	</script>
+</body>
+</html>

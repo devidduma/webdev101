@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="utf-8">
+	<style type="text/css">
+		.container {
+			margin:100px auto;
+			width:200px;
+			height:200px;
+			position:relative;
+			-webkit-perspective:700;
+			text-align:center;
+			font-size:6em;
+		}
+		#cube {
+			width:100%;
+			height:100%;
+			display:block;
+			position:absolute;
+			-webkit-transform-style:preserve-3d;
+			
+		}
+		#cube figure {
+			margin:0;
+			width:196px;
+			height:196px;
+			display:block;
+			position:absolute;
+			border:2px solid black;
+		}
+		
+		#cube .front {
+			background:red;
+			-webkit-transform:rotateY(0deg) translateZ(100px);
+		}
+		#cube .back {
+			background:green;
+			-webkit-transform:rotateY(180deg) translateZ(100px);
+		}
+		#cube .right {
+			background:blue;
+			-webkit-transform:rotateY(90deg) translateZ(100px);
+		}
+		#cube .left {
+			background:yellow;
+			-webkit-transform:rotateY(-90deg) translateZ(100px);
+		}
+		#cube .top {
+			background:brown;
+			-webkit-transform:rotateX(90deg) translateZ(100px);
+		}
+		#cube .bottom {
+			background:brown;
+			-webkit-transform:rotateX(-90deg) translateZ(100px);
+		}
+		
+		#cube:hover {
+			cursor:pointer;
+		}
+		
+		#feedback {
+			display:table;
+			margin:20px auto;
+		}
+	</style>
+</head>
+<body>
+	<section class="container">
+		<div id="cube" style="-webkit-transform:rotateX(0deg) rotateY(0deg);">
+			<figure class="front"></figure>
+			<figure class="back"></figure>
+			<figure class="right"></figure>
+			<figure class="left"></figure>
+			<figure class="top"></figure>
+			<figure class="bottom"></figure>
+		</div>
+	</section>
+	<div id="feedback">Dragging<br /><span id="coordinates" style="margin:0 auto;"></span></div>
+	
+	<div style="display:block; position:absolute; height:200px; width:200px; bottom:0; background-color:#ccc;"></div>
+	
+	<script type="text/javascript" src="C:/xampp/htdocs/tutorials/jQuery tutorials/js/jquery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#feedback').hide();
+			X=Y=0;
+			$('.container').mousedown(function(e){
+				$('#feedback').show();
+				oldX= e.clientX;
+				oldY= e.clientY;
+					$('html').on('mousemove',function(e) {
+						newX= e.clientX;
+						newY= e.clientY;
+						diffX=newX-oldX;
+						diffY=newY-oldY;
+						X+=diffX;
+						Y-=diffY;
+						//$('#coordinates').text(diffX+'  '+diffY);
+						$('#cube').css('-webkit-transform','rotateX('+Y+'deg) rotateY('+X+'deg)');
+						oldX= newX;
+						oldY=newY;
+					}).mouseup(function(){
+						$('html').off('mousemove');
+						$('#feedback').hide();
+					});
+				
+			});
+		});
+	</script>
+</body>
+</html>

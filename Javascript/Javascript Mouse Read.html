@@ -1,0 +1,24 @@
+<html>
+<head>
+
+<script type="text/javascript">
+function ReadMouseMove(e) {
+var x; var y;
+x= document.getElementById('x_coordinate');
+y= document.getElementById('y_coordinate');
+x.innerHTML = e.clientX;
+y.innerHTML = e.clientY;
+}
+document.onmousemove= ReadMouseMove;
+</script>
+
+</head>
+<body>
+
+<h1>Mouse Coordinates</h1>
+
+<h3 id="x_coordinate">0</h3>
+<h3 id="y_coordinate">0</h3>
+
+</body>
+</html>

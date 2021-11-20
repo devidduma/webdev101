@@ -1,0 +1,32 @@
+<html>
+<head>
+	<script type="text/javascript">
+		function people(name, age) {
+		this.name = name;
+		this.age = age;
+		this.yearsRetire = yearsUntil;
+		}
+		
+		function yearsUntil() {
+		return 65-this.age;
+		}
+		
+		var natalie= new people("natalie",27);
+	</script>
+</head>
+<body>
+	<script type="text/javascript">
+		document.write(natalie.yearsRetire());
+	</script>
+</body>
+</html>
+
+<!--
+var person = function (name, age){	this.name = name;	this.age = age;	this.pain = yearsLeft;
+};
+//must add semicolon in the end
+var yearsLeft = function(){	//var numYears can be ignored.	return 65- this.age;
+};
+var cake = new person ("Jack",? 20);
+document.write(cake.pain());
+-->

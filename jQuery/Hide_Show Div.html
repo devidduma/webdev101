@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>jQuery Hide/Show Div</title>
+	<style>
+		
+	</style>
+</head>
+<body>
+	<a id="hideshow" href="#" >Hide</a>
+	<div id="message" style="width:300px; border:1px solid #777; padding:10px;" >
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+	Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+	Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+	Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	</div>
+	
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			//this is just for practice
+			var n=0;
+			$('#hideshow').click(function(){
+				switch(n) {
+					case 0:
+						$('#hideshow').text('Show');
+						$('#message').hide();
+						break;
+					case 1:
+						$('#hideshow').text('Hide');
+						$('#message').show();
+						break;
+				}
+				n= (n+1)%2;
+			});
+		/*
+			$('#hideshow').click(function(){
+				$('#message').toggle();	//if you supply slow, normal, fast there is animation.
+			});
+		});
+		*/
+	</script>
+</body>
+</html>

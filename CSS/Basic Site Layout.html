@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="utf-8">
+	<style type="text/css">
+		html,body {
+			margin:0;
+		}
+		body {
+			font:0.8em Arial,sans-serif;
+		}
+		#wrap {
+			background:#ccc;
+			width:940px;
+			padding:10px 10px 0 10px;
+			margin:auto;
+		}
+		.clearfix:after {
+			content:"clearfix";
+			display:block;
+			visibility:hidden;
+			clear:both;
+			height:0;
+		}
+		
+		#head {
+			position:fixed;
+			z-index:9999;
+			width:940px;
+			background:#aaa;
+			top:0;
+			padding-top:10px;
+		}
+		#main {
+			position:relative;
+			margin:82px auto 0 auto;
+		}
+		
+		h1,ul,h2 {
+			margin:0;
+			padding:0;
+		}
+		#logo>h1 {
+			text-shadow:3px 3px 10px white;
+		}
+		
+		header {margin-bottom:10px;}
+		
+		nav ul {
+			list-style:none;
+			height:30px;
+			margin-bottom:10px;
+			border-bottom:1px solid black;
+			}
+		nav ul li {float:left;}
+		nav ul li a {
+			display:block;
+			padding:0 20px;
+			line-height:30px;
+			color:black;
+			text-decoration:none;
+		}
+		nav ul li a:hover, nav ul li a.selected {
+			color:white;
+			background-color:#333;
+		}
+		
+		#content {
+			background-color:#FFDE66;
+			width:679px;
+			float:left;
+			padding:10px;
+			border-right:1px solid gray;
+			min-height:1000px;
+		}
+		
+		#side {
+			background-color:lightblue;
+			width:220px;
+			float:right;
+			padding:10px;
+		}
+		
+		footer {
+			position:fixed;
+			bottom:0;
+			width:100%;
+			}
+		footer #centerfooter {
+			width:960px;
+			padding:5px;
+			min-height:25px;
+			margin:0 auto;
+			background-color:#555;
+			color:white;
+			border-top:1px solid black;
+			border-radius:5px 5px 0 0;
+			text-align:center;
+		}
+	</style>
+</head>
+<body>
+<div id="wrap">
+	<div id="head">
+		<header>
+			<div id="logo">
+				<h1>Our Website</h1>
+			</div>
+		</header>
+		<nav>
+			<ul class="clearfix">
+				<li><a href="#" class="selected">Home</a></li>
+				<li><a href="#">About Us</a></li>
+				<li><a href="#">Contact Us</a></li>
+				<li><a href="#">Tell a friend</a></li>
+			</ul>
+		</nav>
+	</div>
+	<div id="main" class="clearfix">
+		<div id="content">
+			<h1>Welcome to this site</h1>
+			<p>This is a paragraph</p>
+			<h2>Sub Header</h2>
+			<p>This is another paragraph</p>
+		</div>
+		<div id="side">
+			I am the Side div.
+		</div>
+	</div>
+</div>
+<footer>
+	<div id="centerfooter">
+	Hello, i am the footer. Copyright shit.
+	</div>
+</footer>
+	
+	<script></script>
+</body>
+</html>

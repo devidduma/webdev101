@@ -1,0 +1,23 @@
+<html>
+<head>
+
+<script type="text/javascript">
+	function validator() {
+	if(document.myForm.thebox.checked) alert("It is checked!");
+	else alert("No it is not checked");
+	}
+</script>
+
+</head>
+<body>
+
+<form name="myForm">
+	<input type="checkbox" name="thebox"/></br>
+	<input type="button" name="button" value="Press me!" onClick="validator()"/>
+</form>
+
+<script type="text/javascript">
+</script>
+
+</body>
+</html>

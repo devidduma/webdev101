@@ -1,0 +1,326 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Times;
+      padding: 10px;
+      background: #eee;
+    }
+
+    /* Header/Blog Title */
+    .header {
+      background-color: rgb(126, 193, 255);
+      padding: 20px;
+      text-align: center;
+      background-image: url("https://upload.wikimedia.org/wikipedia/en/thumb/5/56/Real_Madrid_CF.svg/1200px-Real_Madrid_CF.svg.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      color: rgb(255, 255, 255);
+      text-shadow: 1px 2px 2px rgb(255, 128, 111);
+    }
+
+    .header h1 {
+      font-size: 50px;
+    }
+
+    /* Style the top navigation bar */
+    .topnav {
+      overflow: hidden;
+      background-color: rgb(231, 218, 37);
+    }
+
+    /* Style the topnav links */
+    .topnav a {
+      float: left;
+      display: block;
+      color: #ffffff;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: large;
+    }
+
+    /* Change color on hover */
+    .topnav a:hover {
+      background-color: rgb(255, 128, 111);
+      color: rgb(231, 218, 37);
+    }
+
+    /* Create two unequal columns that floats next to each other */
+    /* Left column */
+    .leftcolumn {
+      float: left;
+      width: 75%;
+    }
+
+    /* Right column */
+    .rightcolumn {
+      float: left;
+      width: 25%;
+      padding-left: 20px;
+    }
+
+    /* Add a card effect for articles */
+    .card {
+      padding: 20px;
+      margin-top: 20px;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    /* Footer */
+    .footer {
+      padding: 20px;
+      text-align: center;
+      background: #ddd;
+      margin-top: 20px;
+    }
+
+    /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 800px) {
+
+      .leftcolumn,
+      .rightcolumn {
+        width: 100%;
+        padding: 0;
+      }
+    }
+
+    /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+    @media screen and (max-width: 400px) {
+      .topnav a {
+        float: none;
+        width: 100%;
+      }
+    }
+
+    .container {
+      display: inline-block;
+      width: 600px;
+      padding: 15px;
+      margin: 10px;
+      background-color: rgb(255, 128, 111);
+      color: rgb(255, 255, 255);
+
+      box-shadow: 5px 5px 6px 2px rgb(126, 193, 255);
+      /*
+    box-shadow: X-offset Y-offset blur spread color;
+    
+    to give shadow to other sides, you can use negative values:
+      box-shadow:-5px -5px #000;
+    */
+    }
+
+    .container:hover {
+      box-shadow: 5px 5px 6px 2px rgb(231, 218, 37);
+    }
+
+    h2 {
+      color: darkslategrey;
+      text-shadow: 1px 2px 2px rgb(172, 255, 248);
+    }
+
+    .container h2 a, .container h4 {
+      color: rgb(255, 255, 255);
+      text-decoration: none;
+      text-shadow: 1px 2px 2px rgb(231, 218, 37);
+      width: 100%;
+      text-overflow: ellipsis;
+    }
+
+    .container p {
+      font-weight: bold;
+      color: rgb(70, 70, 70);
+    }
+
+    .container img {
+      width: 100%;
+      height: 240px;
+    }
+
+    .container iframe {
+      width: 100%;
+      height: 240px;
+    }
+
+    a {
+      target-new: tab;
+    }
+
+    .bubble-content {
+      margin: 0 5px;
+      border-radius: 20px;
+      background-color: #fff;
+      box-shadow: 1px 1px 5px rgba(0, 0, 0, .5);
+      font-size: 1em;
+    }
+
+    marquee {
+      height:100%;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="header">
+    <font face="Times" size="5">
+      <h1>Real Madrid Deutschland</h1>
+    </font>
+    <p style="font-size: large; ">Willkommen zur grössten Fanpage des Real Madrid Fussballvereins in Deutschland.</p>
+  </div>
+
+  <div class="topnav">
+    <a target="_blank" href="https://de.wikipedia.org/wiki/Real_Madrid#Geschichte">Geschichte</a>
+    <a target="_blank" href="https://www.realmadrid.com/en/football/squad">Verein</a>
+    <a target="_blank" href="https://www.espn.com/soccer/standings/_/league/esp.1">La Liga Tabelle</a>
+    <a target="_blank" href="https://www.realmadrid.com/de/fussball/spielplan">Spielplan</a>
+
+  </div>
+
+  <div class="row">
+    <div class="leftcolumn">
+      <div class="card">
+        <font face="Times" size="3"
+          style="text-align: center; color:black;">
+          <h2>News</h2>
+        </font>
+
+        <marquee behavior="scroll" direction="left" onmouseover="this.stop();" onmouseout="this.start();">
+          <div class="container">
+            <h2><a target="_blank"
+                href="https://www.spox.com/de/sport/fussball/bundesliga/2011/Artikel/bvb-so-will-real-madrid-erling-haaland-wohl-von-einem-wechsel-ueberzeugen.html">
+                So will Real Madrid Erling Haaland überzeugen</a></h2>
+            <iframe src="https://www.youtube.com/embed/3UVYazcbFU8" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+            <p>BVB-Stürmer Erling Haaland soll ganz oben auf der Transferwunschliste stehen</p>
+          </div>
+
+          <div class=" container">
+            <h2><a target="_blank"
+                href="https://www.fussballeuropa.com/news/raphael-varane-erhalt-ruckendeckung-von-nationaltrainer-didier-deschamps-2020-11">
+                Raphael Varane erhält Rückendeckung</a></h2>
+            <img src="https://www.fussballeuropa.com/images/big/raphael-varane-2019-08-002.jpg" />
+            <p>Nach seinem Eigentor im Auswärtsspiel Valencia hatten sich Kritiker an ihm gerieben</p>
+          </div>
+
+          <div class=" container">
+            <h2><a target="_blank"
+                href="https://www.sport.de/news/ne4236015/medien-loew-als-zidane-nachfolger-bei-real-madrid-im-gespraech/">
+                Löw als Zidane-Nachfolger bei Real im Gespräch</a></h2>
+            <img
+              src="https://www.bbv-net.de/Bilder/Joachim-Loew-hat-beim-DFB-noch-einen-Vertrag-bis-2022-Foto-357161o.jpg" />
+            <p>Nach einem ohnehin nicht gerade gelungenen Start in die Saison hängt der ...</p>
+          </div>
+        </marquee>
+
+        <marquee behavior="scroll" direction="right" onmouseover="this.stop();" onmouseout="this.start();">
+          <div class=" container">
+            <h2><a target="_blank" href="https://www.sport.de/fussball/pe12757/zinedine-zidane/erfolge/">
+                Zinedine Zidane's Erfolge</a></h2>
+            <iframe width="1263" height="480" src="https://www.youtube.com/embed/twj1Nt1MqxI" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+            <p>Zinedine Zidane ist eine Fussball-Legende und darauf stimmen alle zu.
+            </p>
+          </div>
+
+          <div class=" container">
+            <h2><a target="_blank"
+                href="https://www.weltfussball.at/news/_n4246339_/alaba-in-kontakt-mit-real-madrid-coach-zidane/">
+                Alaba in Kontakt mit Real Madrid-Coach Zidane?</a></h2>
+            <img src="https://s.hs-data.com/picmon/d2/3p4Q_ac3hm1_l.jpg" />
+            <p>Und weiter geht das muntere Spekulieren über die Zukunft von David Alaba...</p>
+          </div>
+
+          <div class=" container">
+            <h2><a target="_blank" href="https://www.kicker.de/was-jovic-real-wirklich-kostete-790135/artikel">
+                Was Jovic Real wirklich kostete</a></h2>
+            <iframe width="1263" height="480" src="https://www.youtube.com/embed/oC50kxQ7tMQ" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+            <p>Nun die genaue Summe hervor, die Real der Eintracht im Endeffekt bezahlte.</p>
+          </div>
+        </marquee>
+      </div>
+
+      <div class="card">
+        <font face="Times" size="3"
+          style="text-align: center; color:black;">
+          <h2>Beste "El Classico" Ergebnisse</h2>
+        </font>
+        <div class="container" style="width:30%">
+          <h3>Barcelona 1 - 3 Real Madrid</h3>
+          <iframe width="1263" height="480" src="https://www.youtube.com/embed/TU6zM63GuLo" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        </div>
+        <div class="container" style="width:30%">
+          <h3>Real Madrid 5 - 1 Barcelona</h3>
+          <iframe width="1263" height="480" src="https://www.youtube.com/embed/MM_PM7BPcSU" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        </div>
+        <div class="container" style="width:30%">
+          <h3>Real Madrid 2 - 0 Barcelona</h3>
+          <iframe width="1263" height="480" src="https://www.youtube.com/embed/2yisnS9T-rc" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        </div>
+
+      </div>
+    </div>
+    <div class="rightcolumn">
+      <div class="card">
+        <font face="Times" size="3" color="black">
+          <h2>Trophäen</h2>
+        </font>
+
+        <div class="container" style="width: 100%;">
+          <h4>Champions League x13</h4>
+          <img width="200" height="100" src="https://www.realmadrid.com/img/vertical_220px/champions2017-10.jpg"></img>
+        </div>
+
+        <div class="container" style="width: 100%;">
+          <h4>La Liga x34</h4>
+          <img width="200" height="100"
+            src="https://www.realmadrid.com/img/vertical_220px/liga_rm_220_20200228125315.jpg"></img>
+        </div>
+
+        <div class="container" style="width: 100%;">
+          <h4>Spanish Cups x19</h4>
+          <img width="200" height="100"
+            src="https://www.realmadrid.com/img/vertical_220px/copas-del-rey_220_20200228125313.jpg"></img>
+        </div>
+
+        <div class="container" style="width: 100%;">
+          <h4>Spanish Super Cup x11</h4>
+          <img width="200" height="100"
+            src="https://www.realmadrid.com/img/vertical_220px/supercopas-de-espana_220-3.jpg"></img>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class=" footer bubble-content">
+    <p>
+      <marquee>Midterm exam: Web Technologies and Programming. 15/12/2020 Designed by <b>Devid Duma</b></marquee>
+    </p>
+  </div>
+
+</body>
+
+</html>

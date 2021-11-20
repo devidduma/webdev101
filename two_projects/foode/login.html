@@ -1,0 +1,133 @@
+﻿<!-- By the coutesy of Aleksia Perdhiku at Epoka University-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+
+<head>
+
+  <meta charset="UTF-8"/>
+  
+  <!-- UTF-8 A character in UTF8 can be from 1 to 4 bytes long. 
+  UTF-8 can represent any character in the Unicode standard. 
+  UTF-8 is backwards compatible with ASCII. UTF-8 is the 
+  preferred encoding for e-mail and web pages-->
+  
+  <meta name="description" content="Free Web tutorials"/>
+  <meta name="keywords" content="HTML,CSS,XML,JavaScript"/>
+  <meta name="author" content="John Doe"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Password Check</title>
+
+<style type="text/css">
+		body
+		{
+			margin: 0px;
+			padding: 0px;
+			background-color: lightblue;
+			font-family: sans-serif;
+		}
+		
+		.loginbox
+		{
+			width: 320px;
+			height: 420px;
+			top: 50%;
+			left: 50%;
+			position: absolute;
+			background-color: pink;
+			color: white;
+			box-sizing: border-box;
+			transform: translate(-50%,-50%);
+			padding: 70px 30px;
+		}
+		.avatar
+		{
+			width: 100px;
+			height: 100px;
+			border-radius: 50%;
+			left: 100px;
+			top: -50px;
+			position: absolute;
+		}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="loginbox">
+		<img src="avatar.jpg" class="avatar"></img>
+
+<h3>Password Input</h3>
+
+<label>Your Login
+<input type="login" id="login" size="10"/>
+</label>
+<br/><br/>
+
+<label>Your Password
+<input type="password" value="FakePSW" id="password"/><br/><br/>
+<input type="checkbox" onclick="myFunction()"/>Show Password
+</label>
+<br/><br/>
+
+<button onclick="chkPassword()">Log in</button>
+<p id="button"></p>
+
+<a href="foode.html">
+<p><button onclick="a" type="button" id="site" value="a" disabled="disabled">Enter Site</button></p>
+</a>
+
+
+<script>
+function myFunction() {
+  var x = document.getElementById("password");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+</script>
+
+<script>
+function chkPassword()
+{
+
+var w=document.getElementById('login')
+var y=document.getElementById('password');
+var x;
+var passwd = "123";
+
+if (w.value!="" && y.value!="")
+{
+
+var r=confirm("You have entered a password!");
+
+if (r==true)
+  {
+    
+  if (passwd == y.value)  {
+  x="Your Password is Correct Now You Can Enter the Site!";   
+  document.getElementById("button").innerHTML=x;
+  document.getElementById("site").disabled=false;
+  document.getElementById('p1').style.visibility='visible';
+  return true;
+  }
+  else if (passwd != y.value) {
+  x="Your Password is not Correct";
+  document.getElementById("button").innerHTML=x;
+  return false;
+  }
+  }
+  
+}else { x="Your Login is missing"; document.getElementById("button").innerHTML=x; return false;}
+
+}
+</script>
+
+</div>
+</body>
+</html>

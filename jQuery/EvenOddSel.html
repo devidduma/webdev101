@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="EvenOddSel.css">
+	<title>Even/Odd Selectors</title>
+</head>
+<body>
+	<div id="area">
+	<table class="table">
+		<tr><td>Row1</td></tr>
+		<tr><td>Row2</td></tr>
+		<tr><td>Row3</td></tr>
+		<tr><td>Row4</td></tr>
+	</table>
+	</div>
+	
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" >
+		$(document).ready(function(){
+			$('#area .table tr:even').addClass('highlight');	//notice that counting starts from 1
+					//you can also use 'odd'
+		});
+	</script>
+</body>
+</html>

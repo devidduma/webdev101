@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>jQuery next/nextAll-prev/prevAll</title>
+	<style>
+		.menu {
+			list-style:none;
+			margin:0;
+			padding:0;
+		}
+	</style>
+</head>
+<body>
+	<ul class="names">
+	<li>Devid</li>
+	<li>Duma</li>
+	<li>Livescore</li>
+	<li>Flashscore</li>
+	<li>Facebook</li>
+	</ul>
+	
+	<ul class="menu">
+	<li >User</li>
+	<li hidden>Settings</li>
+	<li hidden>LogOut</li>
+	<li hidden>Delete Account</li>
+	</ul>
+	
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript">
+		$('.names li:first').append(' (First)');
+		$('.names li:last').append(' (Last)');
+		/*---OR---
+		$('.names').find('li').first().append(' (First)');
+		$('.names').find('li').first().next().append(' (After First)');
+		$('.names').find('li').last().append(' (Last)');
+		*/
+		$('.menu').find('li').first().css('font-weight','bold').click(function(){
+			$(this).nextAll().toggle();
+		});
+		/*Dnote:
+		You could also use .nextAll().hide() but it is better to put the hidden attribute right into the html code
+		because otherwise, especially if you use the document.ready(), it could make the li items appear and disappear in a lamp of time
+		*/
+	</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>CSS rules + style attr + jQuery examination</title>
+	<style>
+		.fadeto {
+			opacity:0.4;
+			position:box;
+		}
+		.selected {
+			opacity:1.0;
+			border-style:solid;
+			border-color:gold;
+		}
+	</style>
+</head>
+<body>
+	<img class="fadeto" src="nature.jpg" /><br />
+	<button id="button" >fadeTo 0.2</button>
+	<button id="button2" >fadeTo 1.0</button>
+	
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script>
+		$('.fadeto').click(function(){
+			$(this).toggleClass('selected');
+			alert($(this).attr('style'));
+		});
+		
+		$('#button').click(function(){
+			$('.fadeto').fadeTo(100, 0.2, function(){
+				alert($(this).attr('style'));
+			});
+		});
+		
+		$('#button2').click(function(){
+			$('.fadeto').fadeTo(100, 1.0, function(){
+				alert($(this).attr('style'));
+			});
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>jQuery $.Now()</title>
+	<style>
+		
+	</style>
+</head>
+<body>
+	<span id="time"></span>
+	
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			setInterval(function(){
+				var nowstamp= $.now();	//the Javascript way is: var datestamp= Date.now();
+				var eventTime= Date.parse('12 August 2011');
+				$('#time').text(nowstamp+' ----- '+eventTime);
+			},1);
+		});
+	</script>
+</body>
+</html>

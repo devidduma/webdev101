@@ -1,0 +1,11 @@
+<?php
+
+$string= 'QWERTYUIOPASDFGHJKLZXCVBNM1234567890QWERTYUIOPASDFGHJKLZXCVBNM1234567890QWERTYUIOPASDFGHJKLZXCVBNM1234567890QWERTYUIOPASDFGHJKLZXCVBNM1234567890';
+
+$substr= substr(str_shuffle($string) ,0,strlen($string)/6);
+echo $substr;
+
+$name= 'DEVID DUMA';
+echo '</br>'.$name.' '.strrev($name);
+
+?>

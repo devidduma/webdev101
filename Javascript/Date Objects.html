@@ -1,0 +1,47 @@
+<html>
+<head>
+
+<style type="text/css">
+#Clock {position:absolute;
+		top:center;
+		left:center;
+		background-color:blue;
+		border:green 5px inset;
+		padding:20px;
+		color:lightblue;
+		font-family:"Calibri",Gadget,sans-serif;
+		font-size:30px;
+		font-weight:bold;
+		letter-spacing:2px;
+		display:inline;
+		}
+</style>
+</head>
+<body>
+
+<div id="Clock">
+	<script type="text/javascript">
+	
+	function renderTime() {
+		var currentTime= new Date();
+		var h= currentTime.getHours();
+		var m= currentTime.getMinutes();
+		var s= currentTime.getSeconds();
+		
+		var diem= "AM";
+		if(h>=12) diem= "PM";
+		if(h>12) h-=12;
+		if(h<10) h="0"+h; if(m<10) m="0"+m; if(s<10) s="0"+s;
+		
+		var myClock= document.getElementById("Clock");
+		myClock.textContent= h+":"+m+":"+s+" "+diem;	//Firefox, Chrome
+		myClock.innerText= h+":"+m+":"+s+" "+diem;	//IE
+		
+		setTimeout(renderTime,1000);
+	}
+	
+	renderTime();
+	</script>
+</div>
+</body>
+</html>

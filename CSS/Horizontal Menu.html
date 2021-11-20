@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="utf-8">
+	<style type="text/css">
+		body {
+			background:#e0e0e0;
+		}
+	
+		#container {
+			width:960px;
+			margin: 0 auto;
+		}
+		
+		h1 {
+			font:2em Georgia;
+		}
+		
+		.menu {
+			font:1em Georgia;
+			list-style-type:none;
+			padding:0;
+			margin:0;
+			background:#fff;
+			text-transform:uppercase;
+			border-bottom:3px solid black;
+			border-top:1px solid #ddd;
+		}
+		
+		.menu li {
+			display:inline-block;
+				/* -----IE support---- */
+				zoom:1;
+				*display:inline;
+				/* ------------------- */
+		}
+		
+		.menu li a {
+			color:black;
+			text-decoration:none;
+			line-height:1.6em;
+			display:block;
+			padding:5px 15px 4px 15px;
+		}
+		
+		.menu li a:hover {
+			color:maroon;
+		}
+		
+		.menu li.selected {
+			background-color:black;
+		}
+		.menu li.selected a{
+			color:#fff;
+		}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<h1>phpacademy</h1>
+		<ul class="menu">
+			<li><a href="#">Home</a></li>
+			<li><a href="#">Contact us</a></li>
+			<li><a href="#">About us</a></li>
+			<li><a href="#">Forum</a></li>
+			<li><a href="#">Login</a></li>
+			<li class="selected"><a href="#">Register</a></li>
+		</ul>
+		<p>Some website here</p>
+	</div>
+	
+	<script></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>jQuery Ajax Load</title>
+</head>
+<body>
+	<input id="name" type="text" /><input id="button" type="button" value="Load" />
+	<div id="content"></div>
+	
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#button').click(function(){
+				var name= $('#name').val();
+				
+				$.ajax({
+				url: 'php/AjaxPage.php',
+				type: 'POST',
+				data: {name: name},
+				statusCode: {
+					404: function(){
+						$('#content').text('Content not found');
+					}
+				},
+				success: function(data){
+					$('#content').text(data);
+					}
+				});
+				
+				// .ajax has properties like error/success/complete, which do the same thing as fail()/done()/always()
+			});
+		});
+	</script>
+</body>
+</html>

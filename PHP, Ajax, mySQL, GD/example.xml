@@ -1,0 +1,34 @@
+<producers>
+
+	<producer>
+		<name>Billy</name>
+		<age>20</age>
+		<show>
+			<showname>Sfook</showname>
+			<showdate>12th December 2013</showdate>
+		</show>
+		<show>
+			<showname>DarkLord</showname>
+			<showdate>13th December 2014</showdate>
+		</show>
+	</producer>
+	
+	<producer>
+		<name>Dale</name>
+		<age>16</age>
+		<show>
+			<showname>APRAga1</showname>
+			<showdate>25th December 2013</showdate>
+		</show>
+		<show>
+			<showname>Akachi</showname>
+			<showdate>13th July 2012</showdate>
+		</show>
+	</producer>
+	
+	<producer>
+		<name>Devid</name>
+		<age>17</age>
+	</producer>
+
+</producers>

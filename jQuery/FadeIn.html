@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>jQuery FadeIn</title>
+	<style>
+		
+	</style>
+</head>
+<body>
+	<button id="show">FadeIn</button>
+	<button id="hide">FadeOut</button>
+	<div id="area" style="height:375px; width:500px; background-color:red;" ></div>
+	<div id="feedback" style="background-color:lightgray; width:500px; position:absolute;" ></div>
+	
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#show').click(function(){
+				$('#area').fadeIn(3000,'linear',function(){
+					$('#feedback').append('Effect Complete!<br>');
+				});
+			});
+			$('#hide').click(function(){
+				$('#area').fadeOut(3000,'linear',function(){
+					$('#feedback').append('Effect Complete!<br>');
+				});
+			});
+		});
+	</script>
+</body>
+</html>

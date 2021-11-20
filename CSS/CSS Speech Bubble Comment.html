@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="utf-8">
+	<style type="text/css">
+		body {
+			background-color:#f0f0ee;
+			font:1em "Trebuchet MS";
+		}
+		
+		.bubble-list .bubble {
+			margin-bottom:15px;
+		}
+		
+		.bubble-list .bubble img {
+			float:left;
+			width:80px;
+			border:3px solid #fff;
+			border-radius:10px;
+		}
+		
+		.bubble-list .bubble .bubble-content {
+			position:relative;
+			float:left;
+			margin-left:20px;
+			width:400px;
+			padding:0 20px;
+			border-radius:10px;
+			background-color:#fff;
+			box-shadow:1px 1px 5px rgba(0,0,0,.2);
+		}
+		.bubble-list .bubble .bubble-content .point {
+			width:0;
+			height:0;
+			border-top:10px solid transparent;
+			border-bottom:10px solid transparent;
+			border-right:12px solid #fff;
+			position:absolute;
+			top:12px;
+			left:-12px;
+		}
+		
+		.clearfix:after {
+			content:"clearfix";
+			visibility:hidden;
+			height:0;
+			clear:both;
+			display:block;
+		}
+	</style>
+</head>
+<body>
+	<div class="bubble-list">
+		<div class="bubble clearfix">
+			<img src="http://lorempixel.com/200/200/" alt="LoremPixel image 200x200" />
+			<div class="bubble-content">
+				<div class="point"></div>
+				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.</p>
+			</div>
+		</div>
+		<div class="bubble clearfix">
+			<img src="http://lorempixel.com/200/200/" alt="LoremPixel image 200x200" />
+			<div class="bubble-content">
+				<div class="point"></div>
+				<p>Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum.</p>
+			</div>
+		</div>
+	</div>
+	
+	<script></script>
+</body>
+</html>

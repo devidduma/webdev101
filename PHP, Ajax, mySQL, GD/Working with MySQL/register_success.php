@@ -1,0 +1,1 @@
+You have successfully been registered. <a href="LOGIN users.php">Login Now!</a>

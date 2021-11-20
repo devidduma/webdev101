@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>jQuery FadeToggle</title>
+	<style>
+		
+	</style>
+</head>
+<body>
+	<button id="toggle">FadeToggle</button>
+	<div id="area" style="height:375px; width:500px; background-color:red;" ></div>
+	<div id="feedback" style="background-color:lightgray; width:500px; position:absolute;" ></div>
+	
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#toggle').click(function(){
+				$('#area').fadeToggle(5000,'linear',function(){
+					$('#feedback').append('Animation Complete!<br>');
+				});
+			});
+		});
+	</script>
+</body>
+</html>

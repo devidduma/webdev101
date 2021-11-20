@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>jQuery Ajax Load</title>
+</head>
+<body>
+	Email: <input id="email" type="text" />
+	<span id="feedback"></span>
+	
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			function validate_email(email) {
+				if(email=='')
+					$('#feedback').text('Please fill in with an email.');
+				else {
+					$.post('php/EmailValidation.php',{email: email},function(data){
+						$('#feedback').text(data);
+					});
+				}
+			}
+		
+			$('#email').focus(function(){
+				validate_email($('#email').val());
+			}).blur(function(){
+				$('#feedback').text('');
+			}).keyup(function(){
+				validate_email($('#email').val());
+			});
+		});
+	</script>
+</body>
+</html>

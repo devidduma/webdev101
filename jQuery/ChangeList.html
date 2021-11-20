@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="utf-8">
+	<title>jQuery Change List</title>
+	<style>
+		
+	</style>
+</head>
+<body>
+	<select id="list">
+		<option value="one">One</option>
+		<option value="two">Two</option>
+		<option value="three">Three</option>
+	</select>
+	<span id="list_feedback"></span>
+	
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript">
+		$(document).change(function(){
+			var list_value= $('#list').val();
+			$('#list_feedback').html('You have selected '+list_value);
+		});
+	</script>
+</body>
+</html>

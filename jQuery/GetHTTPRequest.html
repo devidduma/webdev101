@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>jQuery Get HTTP Request</title>
+</head>
+<body>
+	<input name="string" type="text" /><input id="button" type="button" value="Go" />
+	<div id="feedback"></div>
+	<div id="messages"></div>
+	
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript">
+		/*
+		Deprecation Notice: The jqXHR.success(), jqXHR.error(), and jqXHR.complete() callbacks are deprecated as of jQuery 1.8.
+		To prepare your code for their eventual removal, use jqXHR.done(), jqXHR.fail(), and jqXHR.always() instead.
+		*/
+		$(document).ready(function(){
+			$('#button').click(function(){
+				var string= $('input[name="string"]').val();
+				
+				$.get('php/reverse.php',{input:string},function(data){	//input is like $_GET['input'], and string is the name of the input field up
+					$('#feedback').text(data);
+				}).fail(function(){
+					$('#messages').append('An error occured! Please try again later.<br>');
+				}).done(function(){
+					$('#messages').append('Request Succeded!<br>');
+				}).always(function(){
+					$('#messages').append('Request Complete!<br>');
+				});
+				
+			});
+			/*
+			It is the SAME thing for post, you just use $.post ---- just dont forget to use $_POST[] in the php file
+			*/
+		});
+	</script>
+</body>
+</html>

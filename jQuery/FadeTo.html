@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>jQuery Delay</title>
+	<style type="text/css">
+		.fadeto {
+			opacity:0.4;
+			position:box;
+		}
+		.selected {
+			opacity:1.0;
+			border-style:solid;
+			border-color:gold;
+		}
+	</style>
+</head>
+<body>
+	<p>Click over the images to toggle their permanent visibility. Or click here to toggle them all:
+	<button id="Toggle_Button" >Toggle</button></p>
+	<div style="margin:50px;">
+	<img class="fadeto" src="nature.jpg" />
+	<img class="fadeto selected" src="nature.jpg" />
+	<img class="fadeto" src="nature.jpg" />
+	<img class="fadeto" src="nature.jpg" />
+	<img class="fadeto" src="nature.jpg" />
+	<img class="fadeto" src="nature.jpg" />
+	<img class="fadeto" src="nature.jpg" />
+	<img class="fadeto" src="nature.jpg" />
+	</div>
+	<div id="feedback"></div>
+	
+	<script language="javascript" src="js/jquery.js" ></script>
+	<script>
+		$(document).ready(function(){
+			$('.fadeto').hover(function(){
+					$(this).not('.selected').fadeTo(100, 1);
+				},function() {
+					if(!$(this).hasClass('selected'))
+						$(this).fadeTo(100,0.4, function(){
+							$(this).removeAttr('style'); //removed IF not selected
+						});
+					else
+						$(this).removeAttr('style'); //removed IF selected
+				})
+			.click(function(){
+				$(this).toggleClass('selected');
+				});
+			
+			$('#Toggle_Button').click(function(){
+				$('.fadeto').toggleClass('selected');
+				});
+			
+			/*WITH ALERTS FOR DEBUG
+			$('.fadeto').not('.selected').hover(function(){
+				$(this).fadeTo(100, 1);
+				alert($(this).attr('style'));
+			},function() {
+				if(!$(this).hasClass('selected')) $(this).fadeTo(100,0.4,function(){
+					$(this).removeAttr('style');	//removed IF not selected
+					alert('REMOVED from unselected! '+$(this).attr('style'));
+				});
+				else {
+					$(this).removeAttr('style');
+					alert('REMOVED from selected '+$(this).attr('style'));
+				}
+				alert($(this).attr('style'));
+			}).click(function(){
+				$(this).toggleClass('selected');
+				alert($(this).attr('style'));
+			});
+			
+			$('#Toggle_Button').click(function(){
+				var counter=0;
+				$('.fadeto').each(function(){
+					if($(this).hasClass('selected')) $(this).removeClass('selected');
+					else $(this).addClass('selected');
+					counter++;
+				});
+				alert(counter);
+			});
+			*/
+			/*Dnote:
+			1)notice that after each fadeTo() animation, a style attribute with a 40% opacity remains in the affected elements.
+			you must remove the style attribute from the elements after mouseout, so that it doesn't overwrite those of the stylesheet.
+			2) each selector returns a vector of matched elements and these elements are sent to the function. so, it is not dynamically updated,
+			in case when you remove that class from a particular element, it will still remain part of the function.
+			*/
+		});
+	</script>
+</body>
+</html>

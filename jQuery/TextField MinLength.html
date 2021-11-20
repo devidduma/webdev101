@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>jQuery Minimum Text Field Length</title>
+	<style>
+	
+	</style>
+</head>
+<body>
+	5: <input type="text" minlength="5" /><br />
+	10: <input type="text" minlength="10" />
+	
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('input[type="text"]').each(function(){
+				minlength= $(this).attr('minlength');
+				$(this).after(' <span style="display: none;">'+minlength+' characters required.</span>');
+			});
+		
+			$('input[type="text"]').focus(function(){
+				minlength= $(this).attr('minlength');
+				if($(this).val().length<minlength)
+					$(this).next().show();
+			})
+			.keyup(function(e){
+					//var charcode= e.keyCode? e.keyCode : e.charCode; remember this if you want to change the event handler to keydown,
+					//													and make if statements if the Backspace (8) was pressed. ;)
+				minlength= $(this).attr('minlength');
+				if($(this).val().length>=minlength)	//it must be >= not == . think about when you press a key for a long time. it is keyup, not keydown!
+					$(this).next().hide();
+				else if($(this).val().length<minlength)
+					$(this).next().show();
+			})
+			.blur(function(){
+				$(this).next().hide();
+			});
+		});
+	</script>
+</body>
+</html>

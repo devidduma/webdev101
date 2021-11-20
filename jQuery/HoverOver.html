@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>jQuery Hover Over</title>
+	<style>
+		#hoverdiv {
+			display:none;
+			position:absolute;
+			font-size:14px;
+			background-color:#fff;
+			color:#404040;
+			border: 1px solid #999;
+			padding:7px;
+		}
+	</style>
+</head>
+<body>
+	<textarea title="Hello There!!" id="area" maxlength="100"></textarea><br /><br /><!--this is the simple html way-->
+	
+	<a class="hover" href="http://www.google.al" hovertext="Google, a powerful search engine!" >Google</a><br /><br />
+	<img class="hover" src="http://us.123rf.com/400wm/400/400/troyka/troyka1110/troyka111000003/11071094-town-seamless-pattern-vector-art.jpg" hovertext="Pattern Art" />
+	<div id="hoverdiv"></div>
+	
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript">
+		$('.hover').mousemove(function(e){
+			var hovertext= $(this).attr('hovertext');
+			$('#hoverdiv').text(hovertext).show();
+			$('#hoverdiv').css('top',e.pageY+10).css('left',e.pageX+10); //remember: pageX/pageY is for entire document. clientX/clientY is for entire viewport.
+		}).mouseout(function(){
+			$('#hoverdiv').hide();
+		});
+	</script>
+</body>
+</html>

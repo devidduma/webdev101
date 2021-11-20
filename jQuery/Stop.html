@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery Stop</title>
+	<meta charset="utf-8" />
+	<style>
+	
+	</style>
+</head>
+<body>
+	<input id="start" type="button" value="Start" />
+	<input id="stop" type="button" value="Stop" /><br />
+	<img id="image" src="nature.jpg" alt="An image."/>
+	
+	<script language="javascript" src="js/jquery.js"></script>
+	<script>
+		$('#start').click(function(){
+			$('#image').slideToggle(2000);
+		});
+		$('#stop').click(function(){
+			$('#image').stop();
+		});
+		//you can use $('..').stop().slideToggle(); for a great effect
+	</script>
+</body>
+</html>

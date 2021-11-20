@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="utf-8">
+	<title>Overflow</title>
+	<style type="text/css">
+		.comment {
+			width:400px;
+			padding:15px;
+			border:1px solid #04F;
+			
+			/* a new solution */
+			overflow:auto;
+			height:100%;
+		}
+		
+		.comment img {
+			width:100px;
+			float:left;
+		}
+		
+		.comment .text {
+			width:290px;
+			float:left;
+			overflow:hidden;
+			margin-bottom:10px;
+			margin-left:10px;
+		}
+		
+		.comment .links {
+			list-style:none;
+			padding:0;
+			margin:0;
+		}
+		
+		.comment .links li {
+			display:inline;
+			margin-left:10px;
+			float:right;
+		}
+		
+		/* the old solution */
+		.clear {
+			display:block;
+			clear:both;
+		}
+	</style>
+</head>
+<body>
+	<div class="comment">
+		<img src="http://www.uni-regensburg.de/Fakultaeten/phil_Fak_II/Psychologie/Psy_II/beautycheck/english/durchschnittsgesichter/m(01-32)_gr.jpg" alt="User Avatar"/>
+		<div class="text">Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello 
+		</div>
+		<ul class="links">
+			<li>Reply</li>
+			<li>Delete</li>
+			<li>Report</li>
+		</ul>
+		<span class="clear"></span>
+	</div>
+	
+	<script></script>
+</body>
+</html>
